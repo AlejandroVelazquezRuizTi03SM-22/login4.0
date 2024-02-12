@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registrarse</title>
+    <style>
+      body {
+  background-color: #f8f9fa;
+}
+
+.register-container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.button{
+  button[type="submit"] {
+  width: 10%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+}
+.img{
+  display: block;
+      margin: auto;
+}
+    </style>
+</head>
+<body>
+  <h1>LOG-IN EXITOSO BIENVENIDO A LA NUEVA ERA</h1>
+  <img class="img" src="dbvz06o-7c64347a-7df3-4659-a37f-27721d6a7f68.gif" alt="GIF animado">
+        
+        
+    
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyCNcfrz_776xjtvlL50csO6aEOV62u1AE0",
+          authDomain: "web-4-0.firebaseapp.com",
+          projectId: "web-4-0",
+          storageBucket: "web-4-0.appspot.com",
+          messagingSenderId: "1080702978770",
+          appId: "1:1080702978770:web:953fdcc014b6d043adbb0b"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        function closeRegister() {
+            firebase.auth().signOut()
+                .then(() => {
+                    // Se cerró sesión exitosamente
+                    alert('Cerrar sesión')
+                    console.log("Cierre de sesión exitoso");
+                    window.location.replace("/index.html");
+                })
+                .catch((error) => {
+                    // Si hay un error, manejarlo adecuadamente
+                    console.error("Error al cerrar sesión", error.message);
+                    // Puedes mostrar un mensaje de error al usuario aquí
+                });
+        }
+
+    </script>
+<script src="/js/registro.js"></script>
+<button class="close-button" onclick="closeRegister()">Cerrar</button>
+
+</body>
+</html>
